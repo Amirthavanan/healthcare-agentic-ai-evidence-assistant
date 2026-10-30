@@ -1,0 +1,224 @@
+
+import json
+import os
+import re
+from pathlib import Path
+
+import faiss
+import numpy as np
+from pypdf import PdfReader
+from rank_bm25 import BM25Okapi
+from sentence_transformers import SentenceTransformer
+
+
+ROOT = Path(__file__).resolve().parents[1]
+SOURCE_DIR = ROOT / "sources"
+REGISTRY_PATH = SOURCE_DIR / "registry.json"
+
+# Override this with EMBEDDING_MODEL in your environment if required.
+MODEL_NAME = os.getenv(
+    "EMBEDDING_MODEL",
+    "pritamdeka/S-PubMedBert-MS-MARCO",
+)
+
+
+def _tokens(text: str) -> list[str]:
+    return re.findall(r"[a-z0-9]+", text.lower())
+
+
+def _load_source(path: Path) -> list[dict]:
+    """Read TXT or PDF sources while preserving page information."""
+    if path.suffix.lower() == ".pdf":
+        reader = PdfReader(str(path))
+        pages = []
+
+        for page_number, page in enumerate(reader.pages, start=1):
+            text = (page.extract_text() or "").strip()
+            if text:
+                pages.append({
+                    "section": f"Page {page_number}",
+                    "text": text,
+                    "page": page_number,
+                })
+
+        return pages
+
+    raw = path.read_text(encoding="utf-8")
+    sections = re.split(r"(?=SECTION: )", raw)
+    chunks = []
+
+    for section in sections:
+        section = section.strip()
+        if not section:
+            continue
+
+        heading, separator, body = section.partition("\n")
+        text = body.strip() if separator else heading.strip()
+
+        if text:
+            chunks.append({
+                "section": heading.removeprefix("SECTION: ").strip(),
+                "text": text,
+                "page": None,
+            })
+
+    return chunks
+
+
+class HybridRetriever:
+    """Educational hybrid retrieval: BM25 + biomedical embeddings + FAISS."""
+
+    def __init__(
+        self,
+        sparse_weight: float = 0.5,
+        dense_weight: float = 0.5,
+    ):
+        if sparse_weight < 0 or dense_weight < 0:
+            raise ValueError("Weights must be non-negative.")
+
+        total = sparse_weight + dense_weight
+        if total == 0:
+            raise ValueError("At least one weight must be positive.")
+
+        self.sparse_weight = sparse_weight / total
+        self.dense_weight = dense_weight / total
+        self.chunks = []
+
+        if not REGISTRY_PATH.is_file():
+            raise FileNotFoundError(f"Missing registry: {REGISTRY_PATH}")
+
+        registry = json.loads(
+            REGISTRY_PATH.read_text(encoding="utf-8")
+        )
+
+        if not isinstance(registry, list):
+            raise ValueError("registry.json must contain a list.")
+
+        source_root = SOURCE_DIR.resolve()
+
+        for item in registry:
+            if not isinstance(item, dict) or not item.get("file"):
+                raise ValueError("Every source needs a file field.")
+
+            path = (SOURCE_DIR / item["file"]).resolve()
+
+            if not path.is_relative_to(source_root):
+                raise ValueError("Source path escapes sources directory.")
+
+            if not path.is_file():
+                raise FileNotFoundError(f"Missing source: {path}")
+
+            for part in _load_source(path):
+                self.chunks.append({
+                    **item,
+                    **part,
+                    "source_file": item["file"],
+                })
+
+        self.bm25 = None
+        self.index = None
+        self.model = None
+
+        if self.chunks:
+            self.bm25 = BM25Okapi([
+                _tokens(chunk["text"]) for chunk in self.chunks
+            ])
+
+            # Load the embedding model and build the vector index.
+            self.model = SentenceTransformer(MODEL_NAME)
+
+            embeddings = self.model.encode(
+                [chunk["text"] for chunk in self.chunks],
+                convert_to_numpy=True,
+                normalize_embeddings=True,
+                show_progress_bar=True,
+            )
+
+            embeddings = np.asarray(embeddings, dtype=np.float32)
+
+            self.index = faiss.IndexFlatIP(embeddings.shape[1])
+            self.index.add(embeddings)
+
+    @staticmethod
+    def _normalize(scores):
+        scores = [float(score) for score in scores]
+        maximum = max(scores, default=0.0)
+
+        if maximum <= 0:
+            return [0.0] * len(scores)
+
+        return [score / maximum for score in scores]
+
+    def search(
+        self,
+        query: str,
+        top_k: int = 5,
+        min_score: float = 0.0,
+    ) -> list[dict]:
+        if not isinstance(query, str) or not query.strip():
+            return []
+
+        if top_k < 1:
+            return []
+
+        if not 0 <= min_score <= 1:
+            raise ValueError("min_score must be between 0 and 1.")
+
+        if not self.chunks:
+            return []
+
+        # Keyword relevance.
+        sparse = self.bm25.get_scores(_tokens(query))
+
+        # Semantic relevance using normalized embeddings and FAISS.
+        query_embedding = self.model.encode(
+            [query],
+            convert_to_numpy=True,
+            normalize_embeddings=True,
+        )
+        query_embedding = np.asarray(
+            query_embedding, dtype=np.float32
+        )
+
+        # Retrieve all passages so keyword and semantic scores can
+        # be combined consistently.
+        dense = np.zeros(len(self.chunks), dtype=np.float32)
+        similarities, indices = self.index.search(
+            query_embedding, len(self.chunks)
+        )
+
+        for score, index in zip(similarities[0], indices[0]):
+            if index >= 0:
+                dense[index] = max(0.0, float(score))
+
+        sparse_norm = self._normalize(sparse)
+        dense_norm = self._normalize(dense)
+
+        results = []
+
+        for i, chunk in enumerate(self.chunks):
+            score = (
+                self.sparse_weight * sparse_norm[i]
+                + self.dense_weight * dense_norm[i]
+            )
+
+            # A passage must have some positive keyword or semantic
+            # match; a threshold is not a clinical confidence score.
+            if score <= 0 or score < min_score:
+                continue
+
+            results.append({
+                **chunk,
+                "score": round(float(score), 4),
+                "excerpt": chunk["text"][:1200],
+            })
+
+        results.sort(
+            key=lambda result: result["score"],
+            reverse=True,
+        )
+
+        return results[:top_k]
+
+
+retriever = HybridRetriever()

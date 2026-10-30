@@ -1,0 +1,191 @@
+{
+  "k": 5,
+  "query_count": 12,
+  "mean_recall_at_k": 0.9583,
+  "mean_precision_at_k": 0.2,
+  "mean_reciprocal_rank": 0.8333,
+  "failed_queries": [],
+  "results": [
+    {
+      "query_id": "R001",
+      "query": "What is the vision and goal of the Global Patient Safety Action Plan 2021–2030?",
+      "relevant_source_ids": [
+        "who_global_patient_safety_001"
+      ],
+      "retrieved_source_ids": [
+        "who_global_patient_safety_001",
+        "who_global_patient_safety_003"
+      ],
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.2,
+      "reciprocal_rank": 1.0,
+      "relevant_source_found": true
+    },
+    {
+      "query_id": "R002",
+      "query": "What are the seven strategic objectives of the Global Patient Safety Action Plan?",
+      "relevant_source_ids": [
+        "who_global_patient_safety_001"
+      ],
+      "retrieved_source_ids": [
+        "who_global_patient_safety_001"
+      ],
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.2,
+      "reciprocal_rank": 1.0,
+      "relevant_source_found": true
+    },
+    {
+      "query_id": "R003",
+      "query": "What are the five moments for medication safety?",
+      "relevant_source_ids": [
+        "who_five_moments_medication_002"
+      ],
+      "retrieved_source_ids": [
+        "who_five_moments_medication_002",
+        "who_medication_without_harm_004",
+        "who_global_patient_safety_001"
+      ],
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.2,
+      "reciprocal_rank": 1.0,
+      "relevant_source_found": true
+    },
+    {
+      "query_id": "R004",
+      "query": "What questions should patients consider when starting a medication?",
+      "relevant_source_ids": [
+        "who_five_moments_medication_002"
+      ],
+      "retrieved_source_ids": [
+        "who_medication_without_harm_004",
+        "who_five_moments_medication_002"
+      ],
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.2,
+      "reciprocal_rank": 0.5,
+      "relevant_source_found": true
+    },
+    {
+      "query_id": "R005",
+      "query": "At which stages of the medication use process can medication errors occur?",
+      "relevant_source_ids": [
+        "who_medication_without_harm_004"
+      ],
+      "retrieved_source_ids": [
+        "who_medication_without_harm_004",
+        "who_global_patient_safety_001"
+      ],
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.2,
+      "reciprocal_rank": 1.0,
+      "relevant_source_found": true
+    },
+    {
+      "query_id": "R006",
+      "query": "What are the three key action areas of the Medication Without Harm strategic framework?",
+      "relevant_source_ids": [
+        "who_medication_without_harm_004"
+      ],
+      "retrieved_source_ids": [
+        "who_medication_without_harm_004"
+      ],
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.2,
+      "reciprocal_rank": 1.0,
+      "relevant_source_found": true
+    },
+    {
+      "query_id": "R007",
+      "query": "What are the common sources of patient harm in healthcare?",
+      "relevant_source_ids": [
+        "who_global_patient_safety_003"
+      ],
+      "retrieved_source_ids": [
+        "who_global_patient_safety_003",
+        "who_global_patient_safety_001",
+        "who_medication_without_harm_004"
+      ],
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.2,
+      "reciprocal_rank": 1.0,
+      "relevant_source_found": true
+    },
+    {
+      "query_id": "R008",
+      "query": "What system and organizational factors can contribute to patient harm?",
+      "relevant_source_ids": [
+        "who_global_patient_safety_003"
+      ],
+      "retrieved_source_ids": [
+        "who_global_patient_safety_001",
+        "who_global_patient_safety_003",
+        "who_medication_without_harm_004"
+      ],
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.2,
+      "reciprocal_rank": 0.5,
+      "relevant_source_found": true
+    },
+    {
+      "query_id": "R009",
+      "query": "What should patients consider when adding a medication to their existing medications?",
+      "relevant_source_ids": [
+        "who_five_moments_medication_002"
+      ],
+      "retrieved_source_ids": [
+        "who_medication_without_harm_004",
+        "who_five_moments_medication_002"
+      ],
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.2,
+      "reciprocal_rank": 0.5,
+      "relevant_source_found": true
+    },
+    {
+      "query_id": "R010",
+      "query": "What policy approaches can help reduce medication errors and improve medication safety?",
+      "relevant_source_ids": [
+        "who_medication_without_harm_004"
+      ],
+      "retrieved_source_ids": [
+        "who_medication_without_harm_004",
+        "who_global_patient_safety_001"
+      ],
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.2,
+      "reciprocal_rank": 1.0,
+      "relevant_source_found": true
+    },
+    {
+      "query_id": "R011",
+      "query": "How can patient and family engagement contribute to safer healthcare?",
+      "relevant_source_ids": [
+        "who_global_patient_safety_001",
+        "who_global_patient_safety_003"
+      ],
+      "retrieved_source_ids": [
+        "who_global_patient_safety_001"
+      ],
+      "recall_at_k": 0.5,
+      "precision_at_k": 0.2,
+      "reciprocal_rank": 1.0,
+      "relevant_source_found": true
+    },
+    {
+      "query_id": "R012",
+      "query": "What should patients ask when reviewing or stopping their medications?",
+      "relevant_source_ids": [
+        "who_five_moments_medication_002"
+      ],
+      "retrieved_source_ids": [
+        "who_medication_without_harm_004",
+        "who_five_moments_medication_002"
+      ],
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.2,
+      "reciprocal_rank": 0.5,
+      "relevant_source_found": true
+    }
+  ]
+}

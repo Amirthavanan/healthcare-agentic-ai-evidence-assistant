@@ -1,0 +1,42 @@
+[
+  {
+    "id": "who_global_patient_safety_001",
+    "file": "Global Patient Safety Action Plan 2021_2030.pdf",
+    "title": "Global Patient Safety Action Plan 2021_2030",
+    "publisher": "World Health Organization",
+    "version": "2021-2030",
+    "effective_date": "2021-08-01",
+    "review_status": "approved",
+    "description": "Comprehensive strategic framework for eliminating avoidable harm in health care globally."
+  },
+  {
+    "id": "who_five_moments_medication_002",
+    "file": "5 moments for medication safety.pdf",
+    "title": "5 Moments for Medication Safety",
+    "publisher": "World Health Organization",
+    "version": "2019",
+    "effective_date": "2019-01-01",
+    "review_status": "approved",
+    "description": "Patient engagement tool outlining five critical moments when patients/caregivers should ask questions."
+  },
+  {
+    "id": "who_global_patient_safety_003",
+    "file": "patient_safety_fact_sheet_ocr.txt",
+    "title": "Patient Safety Fact Sheet",
+    "publisher": "World Health Organization",
+    "version": "2023",
+    "effective_date": "2023-09-11",
+    "review_status": "approved",
+    "description": "Key statistics, common sources of harm, and system/organizational contributory factors."
+  },
+  {
+    "id": "who_medication_without_harm_004",
+    "file": "Medication Without Harm Policy Brief.pdf",
+    "title": "Medication Without Harm Policy Brief",
+    "publisher": "World Health Organization",
+    "version": "2017",
+    "effective_date": "2017-03-29",
+    "review_status": "approved",
+    "description": "Policy framework addressing high-risk situations, polypharmacy, and transitions of care."
+  }
+]

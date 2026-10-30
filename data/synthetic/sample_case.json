@@ -1,0 +1,11 @@
+{
+  "case_id": "SYN-001",
+  "question": "Prepare an evidence summary for clinician review about worsening cough. Do not diagnose or recommend medication changes.",
+  "patient_context": {
+    "documented_facts": ["Asthma is listed in the supplied synthetic record", "Worsening cough is reported"],
+    "medications": null,
+    "allergies": null,
+    "vital_signs": null,
+    "symptom_duration": null
+  }
+}

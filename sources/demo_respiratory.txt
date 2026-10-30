@@ -1,0 +1,5 @@
+SECTION: Scope and missing information
+This illustrative training document says that a reviewer should distinguish documented symptoms from assumptions. If symptom duration, medication list, allergies, and vital signs were not supplied, mark them as missing. This document is a software demonstration and is not medical guidance.
+
+SECTION: Evidence review
+A clinical evidence summary should identify the source, source version, date, and relevant section. The software should not infer a diagnosis or recommend a medication change. Route clinical interpretation to a qualified clinician.

@@ -1,0 +1,28 @@
+services:
+  api:
+    build: .
+    container_name: healthcare-agentic-api
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_NAME=Healthcare Agentic AI Evidence Assistant
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - SPARSE_WEIGHT=0.35
+      - DENSE_WEIGHT=0.65
+      - LOG_LEVEL=INFO
+    volumes:
+      - ./data:/app/data
+      - ./sources:/app/sources
+    command: uvicorn api.main:app --host 0.0.0.0 --port 8000
+
+  frontend:
+    build: .
+    container_name: healthcare-agentic-ui
+    ports:
+      - "8501:8501"
+    environment:
+      - HEALTHCARE_API_URL=http://api:8000
+    depends_on:
+      - api
+    command: streamlit run app/streamlit_app.py --server.port=8501 --server.address=0.0.0.0
