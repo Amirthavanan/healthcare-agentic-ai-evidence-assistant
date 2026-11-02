@@ -48,6 +48,20 @@ class ReviewResponse(BaseModel):
     direct_answer: str | None = None
     key_findings: list[str] = Field(default_factory=list)
     citations: list[dict[str, Any]] = Field(default_factory=list)
+    agent_events: list[dict[str, Any]] = Field(default_factory=list)
+    clarification_prompt: str | None = None
+    safe_next_step: str | None = None
+    llm_generation_mode: str | None = None
+    model_name: str | None = None
+
+
+class LLMHealthResponse(BaseModel):
+    provider: str
+    model: str
+    configured: bool
+    available: bool
+    status_code: str
+    message: str
 
 
 class SearchQueryRequest(BaseModel):

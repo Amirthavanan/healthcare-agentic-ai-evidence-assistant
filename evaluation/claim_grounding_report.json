@@ -1,0 +1,1050 @@
+{
+  "total_claims": 66,
+  "supported_count": 58,
+  "partially_supported_count": 5,
+  "unsupported_count": 3,
+  "support_rate": 0.8788,
+  "partial_rate": 0.0758,
+  "unsupported_rate": 0.0455,
+  "records": [
+    {
+      "claim_id": "CLM-001",
+      "claim_text": "Medication reconciliation is a key defense in medication safety.",
+      "source_id": "who_medication_without_harm_004",
+      "page_number": 23,
+      "supporting_evidence_passage": "Policy options to address medication errors 21\nerror (137-139). Train staff on use of technology such as automated dispensing, to reduce \ndispensing error rates (27). Medication reconciliation and review, pharmacist involvement in \nmedication safety, are effective in reducing medication errors in ac",
+      "grounding_status": "partially_supported",
+      "evaluation_method": "semantic_heuristic",
+      "overlap_score": 0.5486,
+      "details": {
+        "content_word_containment": 0.6,
+        "bigram_overlap": 0.4286,
+        "matched_content_words": [
+          "medication",
+          "reconciliation",
+          "safety"
+        ]
+      }
+    },
+    {
+      "claim_id": "CLM-002",
+      "claim_text": "Transcribing errors are common and can lead to medication discrepancies.",
+      "source_id": "who_medication_without_harm_004",
+      "page_number": 14,
+      "supporting_evidence_passage": "Errors during the medication use process 5\n2.2 Transcribing \nTranscribing errors occur during order communication due to incorrect data recording by health and \ncare workers (25). A study defined transcribing error in hospital practice as, any discrepancy between the \nphysician's medication order an",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_lexical_containment",
+      "overlap_score": 0.5333,
+      "details": {
+        "content_word_containment": 0.6667,
+        "bigram_overlap": 0.2222,
+        "matched_content_words": [
+          "common",
+          "errors",
+          "medication",
+          "transcribing"
+        ]
+      }
+    },
+    {
+      "claim_id": "CLM-003",
+      "claim_text": "Medication errors represent 25% of preventable patient harm in hospitals.",
+      "source_id": "who_medication_without_harm_004",
+      "page_number": 15,
+      "supporting_evidence_passage": "6 Medication without harm: policy brief\n3\nScale of errors and \ncontributory factors \nUnsafe care is one of the leading causes of morbidity and mortality in the world. It occurs at all levels \nof health care in countries, regardless of their income status. An average of one in 10 patients in \nhigh-in",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_lexical_containment",
+      "overlap_score": 0.7833,
+      "details": {
+        "content_word_containment": 0.8333,
+        "bigram_overlap": 0.6667,
+        "matched_content_words": [
+          "errors",
+          "harm",
+          "hospitals",
+          "medication",
+          "preventable"
+        ]
+      }
+    },
+    {
+      "claim_id": "CLM-004",
+      "claim_text": "Teamwork and communication training improve safety culture and may positively affect patient outcomes.",
+      "source_id": "who_medication_without_harm_004",
+      "page_number": 23,
+      "supporting_evidence_passage": "14 Medication without harm: policy brief\nTeamwork and communication training interventions improved the safety culture in emergency \ndepartment settings and may positively affect patient outcome (101). Organizations with an effective \nculture of safety are committed to safety as a high priority thro",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_lexical_containment",
+      "overlap_score": 0.7444,
+      "details": {
+        "content_word_containment": 0.7778,
+        "bigram_overlap": 0.6667,
+        "matched_content_words": [
+          "affect",
+          "communication",
+          "culture",
+          "positively",
+          "safety",
+          "teamwork",
+          "training"
+        ]
+      }
+    },
+    {
+      "claim_id": "CLM-005",
+      "claim_text": "Reporting and learning systems are vital for patient safety improvement.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 65,
+      "supporting_evidence_passage": "Current data sources are therefore fragmented and \ndisparate and fall well short of the comprehensive, \nintegrated information system needed within patient \nsafety programmes. A few health care leaders can \nconfidently describe which data their organizations \nuse to monitor and learn from patient sa",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_lexical_containment",
+      "overlap_score": 0.6333,
+      "details": {
+        "content_word_containment": 0.6667,
+        "bigram_overlap": 0.5556,
+        "matched_content_words": [
+          "learning",
+          "reporting",
+          "safety",
+          "systems"
+        ]
+      }
+    },
+    {
+      "claim_id": "CLM-006",
+      "claim_text": "Incorrect patient identification is a frequent cause of medication errors.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 42,
+      "supporting_evidence_passage": "the time. Every day, nearly 7000 papers are published \nand listed in the main clinical science database. Thus, \nit is incredibly difficult for the busy individual clinician \nto keep abreast of what is the latest and the best \nevidence.\nThere are a number of generic features of clinical \nprocesses th",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_lexical_containment",
+      "overlap_score": 0.6167,
+      "details": {
+        "content_word_containment": 0.6667,
+        "bigram_overlap": 0.5,
+        "matched_content_words": [
+          "errors",
+          "identification",
+          "incorrect",
+          "medication"
+        ]
+      }
+    },
+    {
+      "claim_id": "CLM-007",
+      "claim_text": "Preventable medication‑related harm affects approximately 5% of patients globally, rising to 7% in low‑ and middle‑income countries.",
+      "source_id": "who_medication_without_harm_004",
+      "page_number": 8,
+      "supporting_evidence_passage": "6 Medication without harm: policy brief\n3\nScale of errors and \ncontributory factors \nUnsafe care is one of the leading causes of morbidity and mortality in the world. It occurs at all levels \nof health care in countries, regardless of their income status. An average of one in 10 patients in \nhigh-in",
+      "grounding_status": "partially_supported",
+      "evaluation_method": "semantic_heuristic",
+      "overlap_score": 0.3769,
+      "details": {
+        "content_word_containment": 0.5385,
+        "bigram_overlap": 0.0,
+        "matched_content_words": [
+          "countries",
+          "harm",
+          "income",
+          "medication",
+          "patients",
+          "preventable",
+          "related"
+        ]
+      }
+    },
+    {
+      "claim_id": "CLM-008",
+      "claim_text": "Most medication errors occur during prescribing and monitoring stages.",
+      "source_id": "who_medication_without_harm_004",
+      "page_number": 8,
+      "supporting_evidence_passage": "Executive summary vii\nExecutive summary \nPatient harm due to unsafe care is a leading cause of death and disability worldwide, and most of such \nharm is avoidable (1). Harm due to medicines and therapeutic options accounted for nearly 50% of the \noverall preventable harm in medical care (2). The poo",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_lexical_containment",
+      "overlap_score": 0.9625,
+      "details": {
+        "content_word_containment": 1.0,
+        "bigram_overlap": 0.875,
+        "matched_content_words": [
+          "errors",
+          "medication",
+          "monitoring",
+          "occur",
+          "prescribing",
+          "stages"
+        ]
+      }
+    },
+    {
+      "claim_id": "CLM-009",
+      "claim_text": "Drug‑related incidents account for about 25% of preventable patient harm in a meta‑analysis of 70 studies.",
+      "source_id": "who_medication_without_harm_004",
+      "page_number": 15,
+      "supporting_evidence_passage": "6 Medication without harm: policy brief\n3\nScale of errors and \ncontributory factors \nUnsafe care is one of the leading causes of morbidity and mortality in the world. It occurs at all levels \nof health care in countries, regardless of their income status. An average of one in 10 patients in \nhigh-in",
+      "grounding_status": "partially_supported",
+      "evaluation_method": "semantic_heuristic",
+      "overlap_score": 0.5014,
+      "details": {
+        "content_word_containment": 0.5556,
+        "bigram_overlap": 0.375,
+        "matched_content_words": [
+          "harm",
+          "incidents",
+          "preventable",
+          "related",
+          "studies"
+        ]
+      }
+    },
+    {
+      "claim_id": "CLM-010",
+      "claim_text": "Fragmented data systems hinder comprehensive patient safety monitoring.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 65,
+      "supporting_evidence_passage": "Current data sources are therefore fragmented and \ndisparate and fall well short of the comprehensive, \nintegrated information system needed within patient \nsafety programmes. A few health care leaders can \nconfidently describe which data their organizations \nuse to monitor and learn from patient sa",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_lexical_containment",
+      "overlap_score": 0.5429,
+      "details": {
+        "content_word_containment": 0.7143,
+        "bigram_overlap": 0.1429,
+        "matched_content_words": [
+          "comprehensive",
+          "data",
+          "fragmented",
+          "safety",
+          "systems"
+        ]
+      }
+    },
+    {
+      "claim_id": "CLM-011",
+      "claim_text": "Integrated patient safety information systems and robust incident reporting are essential strategies to reduce medication‑related harm.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 69,
+      "supporting_evidence_passage": "STRATEGY 6.2: \nCreate a patient \nsafety information \nsystem based on \nall sources of data \nrelated to risks and \nharm inherent in the \ndelivery of health \ncare and integrated \nwith existing health \nmanagement \ninformation systems\nActions for governments \n Strengthen synergies and data-sharing channe",
+      "grounding_status": "partially_supported",
+      "evaluation_method": "semantic_heuristic",
+      "overlap_score": 0.5058,
+      "details": {
+        "content_word_containment": 0.6154,
+        "bigram_overlap": 0.25,
+        "matched_content_words": [
+          "harm",
+          "incident",
+          "information",
+          "integrated",
+          "related",
+          "reporting",
+          "safety",
+          "systems"
+        ]
+      }
+    },
+    {
+      "claim_id": "CLM-012",
+      "claim_text": "Packaging and labeling design contribute to medication errors.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 42,
+      "supporting_evidence_passage": "the time. Every day, nearly 7000 papers are published \nand listed in the main clinical science database. Thus, \nit is incredibly difficult for the busy individual clinician \nto keep abreast of what is the latest and the best \nevidence.\nThere are a number of generic features of clinical \nprocesses th",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_lexical_containment",
+      "overlap_score": 0.5952,
+      "details": {
+        "content_word_containment": 0.6667,
+        "bigram_overlap": 0.4286,
+        "matched_content_words": [
+          "design",
+          "errors",
+          "medication",
+          "packaging"
+        ]
+      }
+    },
+    {
+      "claim_id": "CLM-013",
+      "claim_text": "No supported evidence claim can be made from the indexed collection.",
+      "source_id": "NONE",
+      "page_number": null,
+      "supporting_evidence_passage": "",
+      "grounding_status": "unsupported",
+      "evaluation_method": "unmatched_source",
+      "overlap_score": 0.0,
+      "details": {
+        "reason": "Cited source_id 'NONE' was not found in retrieved passages."
+      }
+    },
+    {
+      "claim_id": "CLM-014",
+      "claim_text": "Actions for stakeholders \n Provide support and expertise for incorporation of patient safety elements in national \npolicies, strategies, plans and normative guidance.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 40,
+      "supporting_evidence_passage": "Actions for stakeholders \n Provide support and expertise for incorporation of patient safety elements in national \npolicies, strategies, plans and normative guidance. \n Work with civil society organizations to mobilize the public, raise awareness and engage \ncommunities on the importance of patient ",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-015",
+      "claim_text": "Work with civil society organizations to mobilize the public, raise awareness and engage \ncommunities on the importance of patient and health worker safety and a safe working \nenvironment.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 40,
+      "supporting_evidence_passage": "Actions for stakeholders \n Provide support and expertise for incorporation of patient safety elements in national \npolicies, strategies, plans and normative guidance. \n Work with civil society organizations to mobilize the public, raise awareness and engage \ncommunities on the importance of patient ",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-016",
+      "claim_text": "Routinely reassess, evaluate and update IPC and other guidelines related to health care-\nassociated infections and antimicrobial resistance, as needed, and ensure these guidelines \nalign with other WHO guidance documents.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 47,
+      "supporting_evidence_passage": "Design and run campaigns and advocacy initiatives to raise awareness of, generate \nenthusiasm for, and gain commitment to IPC programmes to reduce harm and prevent \ndeath. \n Facilitate and help to mobilize funding for IPC country capacity-building. \n Provide concrete goals and benchmarks and measure",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-017",
+      "claim_text": "Design and run campaigns and advocacy initiatives to raise awareness of, generate \nenthusiasm for, and gain commitment to IPC programmes to reduce harm and prevent \ndeath.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 47,
+      "supporting_evidence_passage": "Design and run campaigns and advocacy initiatives to raise awareness of, generate \nenthusiasm for, and gain commitment to IPC programmes to reduce harm and prevent \ndeath. \n Facilitate and help to mobilize funding for IPC country capacity-building. \n Provide concrete goals and benchmarks and measure",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-018",
+      "claim_text": "Investing in patient safety positively impacts health outcomes, reduces costs related to patient\nharm, improves system efficiency, and helps in reassuring communities and restoring their\ntrust in health care systems (4,5).",
+      "source_id": "who_global_patient_safety_003",
+      "page_number": 5,
+      "supporting_evidence_passage": "Investing in patient safety positively impacts health outcomes, reduces costs related to patient\nharm, improves system efficiency, and helps in reassuring communities and restoring their\ntrust in health care systems (4,5).\n\nWHO response\n\nGlobal action on patient safety\n\nRecognizing patient safety as",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-019",
+      "claim_text": "WHO response\n\nGlobal action on patient safety\n\nRecognizing patient safety as a global health priority, and as an essential component of\nstrengthening health systems for moving towards universal health coverage, the Seventy-\nsecond World Health Assembly adopted resolution WHA72.6 on \"Global action on patient\nsafety\" in May 2019.",
+      "source_id": "who_global_patient_safety_003",
+      "page_number": 5,
+      "supporting_evidence_passage": "Investing in patient safety positively impacts health outcomes, reduces costs related to patient\nharm, improves system efficiency, and helps in reassuring communities and restoring their\ntrust in health care systems (4,5).\n\nWHO response\n\nGlobal action on patient safety\n\nRecognizing patient safety as",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-020",
+      "claim_text": "Publish an annual report on patient safety performance of the health system of the \ncountry, including the frequency, nature and burden of avoidable harm in health care.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 69,
+      "supporting_evidence_passage": "STRATEGY 6.2: \nCreate a patient \nsafety information \nsystem based on \nall sources of data \nrelated to risks and \nharm inherent in the \ndelivery of health \ncare and integrated \nwith existing health \nmanagement \ninformation systems\nActions for governments \n Strengthen synergies and data-sharing channe",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-021",
+      "claim_text": "Develop a set of indicators for patient safety aligned with global patient safety targets.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 69,
+      "supporting_evidence_passage": "STRATEGY 6.2: \nCreate a patient \nsafety information \nsystem based on \nall sources of data \nrelated to risks and \nharm inherent in the \ndelivery of health \ncare and integrated \nwith existing health \nmanagement \ninformation systems\nActions for governments \n Strengthen synergies and data-sharing channe",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-022",
+      "claim_text": "Actions for health care facilities and services \n Implement minimum IPC requirements in health care facilities (refer to WHO Minimum \nrequirements for infection prevention and control programmes, 2019).",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 46,
+      "supporting_evidence_passage": "Actions for health care facilities and services \n Implement minimum IPC requirements in health care facilities (refer to WHO Minimum \nrequirements for infection prevention and control programmes, 2019).\n Designate an officer responsible in each health care facility to coordinate patient safety \neffo",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-023",
+      "claim_text": "Implement IPC, antibiotic stewardship and comprehensive waste management education \nand training for all health workers by using team- and task-based strategies that include \nbedside and simulation training.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 46,
+      "supporting_evidence_passage": "Actions for health care facilities and services \n Implement minimum IPC requirements in health care facilities (refer to WHO Minimum \nrequirements for infection prevention and control programmes, 2019).\n Designate an officer responsible in each health care facility to coordinate patient safety \neffo",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-024",
+      "claim_text": "The Economics of \npatient safety part III: long-term care: valuing safety for the long \nhaul.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 49,
+      "supporting_evidence_passage": "Technical resources \nde Bienassis K, Llena-Nozal A, Klazinga NS. 2020. The Economics of \npatient safety part III: long-term care: valuing safety for the long \nhaul. OECD Health Working Paper No. 121. Paris: Organisation for \nEconomic Co-operation and Development (https://doi.org/10.1787/\nbe07475c-en",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-025",
+      "claim_text": "Paris: Organisation for \nEconomic Co-operation and Development (https://doi.org/10.1787/\nbe07475c-en; accessed 16 July 2021).",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 49,
+      "supporting_evidence_passage": "Technical resources \nde Bienassis K, Llena-Nozal A, Klazinga NS. 2020. The Economics of \npatient safety part III: long-term care: valuing safety for the long \nhaul. OECD Health Working Paper No. 121. Paris: Organisation for \nEconomic Co-operation and Development (https://doi.org/10.1787/\nbe07475c-en",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-026",
+      "claim_text": "They helped to draw up the first ever set of evidence-based \nguidelines on hand hygiene issued by WHO to underpin \nimplementation of the Challenge.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 74,
+      "supporting_evidence_passage": "health care-associated infection prevention and control. \nThey helped to draw up the first ever set of evidence-based \nguidelines on hand hygiene issued by WHO to underpin \nimplementation of the Challenge. A coalition of Member \nStates, professional associations, academic centres, NGOs \nand patient ",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-027",
+      "claim_text": "A coalition of Member \nStates, professional associations, academic centres, NGOs \nand patient representatives helped to drive forward a \nprogramme whose core objectives were adopted to cover \n90% of the world's population.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 74,
+      "supporting_evidence_passage": "health care-associated infection prevention and control. \nThey helped to draw up the first ever set of evidence-based \nguidelines on hand hygiene issued by WHO to underpin \nimplementation of the Challenge. A coalition of Member \nStates, professional associations, academic centres, NGOs \nand patient ",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-028",
+      "claim_text": "T\nhe conceptual framework for the international \nclassification for patient safety.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 105,
+      "supporting_evidence_passage": "1. R ooney AL, van Ostenberg PR. Licensure, \naccreditation, and certification: approaches to \nhealth services quality. Bethesda (MD): United States \nAgency for International Development; 1999.\n2.\n M\nedication safety in polypharmacy. Geneva: \nWorld Health Organization; 2019 (https://www.\nwho.int/publ",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-029",
+      "claim_text": "Geneva: World \nHealth Organization; 2009 (https://www.who.int/\npublications/i/item/the-conceptual-framework-for-\nthe-international-classification-for-patient-safety-\n(icps), accessed 12 July 2021).",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 105,
+      "supporting_evidence_passage": "1. R ooney AL, van Ostenberg PR. Licensure, \naccreditation, and certification: approaches to \nhealth services quality. Bethesda (MD): United States \nAgency for International Development; 1999.\n2.\n M\nedication safety in polypharmacy. Geneva: \nWorld Health Organization; 2019 (https://www.\nwho.int/publ",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-030",
+      "claim_text": "Guideline excerpt from Page 42: Annexes 33 Term Definition and source Medication discrepancy Any difference between medication use history and admission medication orders (13);  may be intenti...",
+      "source_id": "who_medication_without_harm_004",
+      "page_number": 42,
+      "supporting_evidence_passage": "Annexes 33\nTerm Definition and source\nMedication discrepancy Any difference between medication use history and admission medication orders (13); \nmay be intentional, undocumented intentional or unintentional (6)\nMedication error Any preventable event that causes or leads to inappropriate medication ",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_lexical_containment",
+      "overlap_score": 0.7808,
+      "details": {
+        "content_word_containment": 0.7857,
+        "bigram_overlap": 0.7692,
+        "matched_content_words": [
+          "admission",
+          "annexes",
+          "definition",
+          "difference",
+          "discrepancy",
+          "history",
+          "medication",
+          "orders"
+        ]
+      }
+    },
+    {
+      "claim_id": "CLM-031",
+      "claim_text": "12 Medication without harm: policy brief\nInformal health care providers, who function as health workers in LMICs (95), often provide medicines \nto patients, which may be a risk factor for medication safety and patient harm due to lack of knowledge, \nexpertise, and poor adherence to national clinical guidelines.",
+      "source_id": "who_medication_without_harm_004",
+      "page_number": 21,
+      "supporting_evidence_passage": "12 Medication without harm: policy brief\nInformal health care providers, who function as health workers in LMICs (95), often provide medicines \nto patients, which may be a risk factor for medication safety and patient harm due to lack of knowledge, \nexpertise, and poor adherence to national clinical",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-032",
+      "claim_text": "The systems \nand environment in high-income countries, with electronic prescribing, bar-coded dispensing, automated \ndevices for administration and established error reporting and learning systems, is more likely to \nprevent medication errors (29).",
+      "source_id": "who_medication_without_harm_004",
+      "page_number": 21,
+      "supporting_evidence_passage": "12 Medication without harm: policy brief\nInformal health care providers, who function as health workers in LMICs (95), often provide medicines \nto patients, which may be a risk factor for medication safety and patient harm due to lack of knowledge, \nexpertise, and poor adherence to national clinical",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-033",
+      "claim_text": "Medication reconciliation and review, pharmacist involvement in \nmedication safety, are effective in reducing medication errors in acute care (140).",
+      "source_id": "who_medication_without_harm_004",
+      "page_number": 30,
+      "supporting_evidence_passage": "Policy options to address medication errors 21\nerror (137-139). Train staff on use of technology such as automated dispensing, to reduce \ndispensing error rates (27). Medication reconciliation and review, pharmacist involvement in \nmedication safety, are effective in reducing medication errors in ac",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-034",
+      "claim_text": "Administration and patient monitoring: implement strategies specific for each setting and \ncategory, prioritizing high alert medicines, perioperative care, emergency departments, care of \nchildren and the elderly to prevent administration and monitoring errors (141, 142).",
+      "source_id": "who_medication_without_harm_004",
+      "page_number": 30,
+      "supporting_evidence_passage": "Policy options to address medication errors 21\nerror (137-139). Train staff on use of technology such as automated dispensing, to reduce \ndispensing error rates (27). Medication reconciliation and review, pharmacist involvement in \nmedication safety, are effective in reducing medication errors in ac",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-035",
+      "claim_text": "Prioritizing patients for medication review: they include residents of care homes, patients on \nhigh-alert medicines, patients taking 10 or more medicines, patients with two or more comorbid \nconditions, frail patients, those with dementia and patients in palliative care (115).",
+      "source_id": "who_medication_without_harm_004",
+      "page_number": 26,
+      "supporting_evidence_passage": "Policy options to address medication errors 17\n De-prescribing: consist of tapering off, stopping, discontinuing or withdrawing medicines. \nDeprescribing, minimizes the dosage, the number of tablets and the frequency of administration \n(112). STOPP/START criteria have been used in de-prescribing and",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-036",
+      "claim_text": "Solutions to ensure \nmedication safety at transitions of care include involving people, technology, systems and processes.",
+      "source_id": "who_medication_without_harm_004",
+      "page_number": 26,
+      "supporting_evidence_passage": "Policy options to address medication errors 17\n De-prescribing: consist of tapering off, stopping, discontinuing or withdrawing medicines. \nDeprescribing, minimizes the dosage, the number of tablets and the frequency of administration \n(112). STOPP/START criteria have been used in de-prescribing and",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-037",
+      "claim_text": "Work in collaboration with other countries, civil society organizations, patient \norganizations, professional bodies, academic and research institutions, industry and \nother relevant stakeholders to prom",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 27,
+      "supporting_evidence_passage": "Strategic objective 1: \nMake zero avoidable harm to patients a state of mind and a rule of engagement in the \nplanning and delivery of health care everywhere\nSTRATEGY 1.1: \nDevelop a \ncomprehensive \npatient safety \npolicy, strategy, \ninstitutional \nframework and \naction plan for the \ncountry's healt",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-038",
+      "claim_text": "12 Medication without harm: policy brief\nInformal health care providers, who function as health workers in LMICs (95), often provide medicines \nto patients, which may be a risk factor for medication safety and patient harm due to lack of knowledge, \nexpertise, and poor adherence to national clinical guidelines.",
+      "source_id": "who_medication_without_harm_004",
+      "page_number": 21,
+      "supporting_evidence_passage": "12 Medication without harm: policy brief\nInformal health care providers, who function as health workers in LMICs (95), often provide medicines \nto patients, which may be a risk factor for medication safety and patient harm due to lack of knowledge, \nexpertise, and poor adherence to national clinical",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-039",
+      "claim_text": "The systems \nand environment in high-income countries, with electronic prescribing, bar-coded dispensing, automated \ndevices for administration and established error reporting and learning systems, is more likely to \nprevent medication errors (29).",
+      "source_id": "who_medication_without_harm_004",
+      "page_number": 21,
+      "supporting_evidence_passage": "12 Medication without harm: policy brief\nInformal health care providers, who function as health workers in LMICs (95), often provide medicines \nto patients, which may be a risk factor for medication safety and patient harm due to lack of knowledge, \nexpertise, and poor adherence to national clinical",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-040",
+      "claim_text": "Actions for stakeholders \n Encourage researchers and research bodies to conduct and commission high-quality \nstudies on the application of human factors in improving the safety of health care and \nreducing the level of avoidable harm.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 39,
+      "supporting_evidence_passage": "Actions for health care facilities and services\n Assess gaps in relation to human factors in service delivery processes, workplace design \nand care environments.\n Build the capacity of patient safety leaders in human factors.\n Provide all health care staff with training on human factors.\n Ensure com",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-041",
+      "claim_text": "Mobilize the expertise and practical know-how of those in other high-risk industries to \ninform the design of action programmes to improve patient safety and build resilient \nhealth care organizations.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 39,
+      "supporting_evidence_passage": "Actions for health care facilities and services\n Assess gaps in relation to human factors in service delivery processes, workplace design \nand care environments.\n Build the capacity of patient safety leaders in human factors.\n Provide all health care staff with training on human factors.\n Ensure com",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-042",
+      "claim_text": "Label high-alert medicines and LASA \nmedicines for clear identification using 'tall man' lettering and auxiliary labelling.",
+      "source_id": "who_medication_without_harm_004",
+      "page_number": 29,
+      "supporting_evidence_passage": "20 M edication without harm: policy brief\n4.4.3 Medicines as products\nAttention to some aspects of medicines as products can minimize errors at all stages of their use, \nparticularly on the following subdomains: \n Product quality and safety: implement robust regulatory systems and processes to ensur",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-043",
+      "claim_text": "Guideline excerpt from Page 55: STRATEGY 4.4:  Establish the  principle and  practice of  openness and  transparency  throughout health  care, including  through patient  safety incident  disc...",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 55,
+      "supporting_evidence_passage": "STRATEGY 4.4: \nEstablish the \nprinciple and \npractice of \nopenness and \ntransparency \nthroughout health \ncare, including \nthrough patient \nsafety incident \ndisclosure to \npatients and \nfamilies\nActions for governments \n Develop national guidance for informed consent, for patient access to their medi",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_lexical_containment",
+      "overlap_score": 0.7817,
+      "details": {
+        "content_word_containment": 0.8,
+        "bigram_overlap": 0.7391,
+        "matched_content_words": [
+          "care",
+          "establish",
+          "health",
+          "incident",
+          "including",
+          "openness",
+          "practice",
+          "principle"
+        ]
+      }
+    },
+    {
+      "claim_id": "CLM-044",
+      "claim_text": "Guideline excerpt from Page 14: this would be accomplished through the fulfilment of a  number of core functions and other short-term initiatives  as set out by the World Alliance for Patient...",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 14,
+      "supporting_evidence_passage": "this would be accomplished through the fulfilment of a \nnumber of core functions and other short-term initiatives \nas set out by the World Alliance for Patient Safety in an \nannual work programme.\nGlobal Patient Safety Challenges\nThe first programme of work produced by the World \nAlliance for Patien",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_lexical_containment",
+      "overlap_score": 0.8316,
+      "details": {
+        "content_word_containment": 0.8333,
+        "bigram_overlap": 0.8276,
+        "matched_content_words": [
+          "accomplished",
+          "alliance",
+          "core",
+          "fulfilment",
+          "functions",
+          "initiatives",
+          "number",
+          "set"
+        ]
+      }
+    },
+    {
+      "claim_id": "CLM-045",
+      "claim_text": "Guideline excerpt from Page 4 (Part 1): patient safety incident:  - system and organizational factors: the complexity of medical interventions, inadequate processes and procedures, disruptions in work...",
+      "source_id": "who_global_patient_safety_003",
+      "page_number": 4,
+      "supporting_evidence_passage": "patient safety incident:\n\n- system and organizational factors: the complexity of medical interventions, inadequate\nprocesses and procedures, disruptions in workflow and care coordination, resource\nconstraints, inadequate staffing and competency development;\n\n- technological factors: issues related t",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_lexical_containment",
+      "overlap_score": 0.7467,
+      "details": {
+        "content_word_containment": 0.75,
+        "bigram_overlap": 0.7391,
+        "matched_content_words": [
+          "complexity",
+          "disruptions",
+          "factors",
+          "inadequate",
+          "incident",
+          "interventions",
+          "medical",
+          "organizational"
+        ]
+      }
+    },
+    {
+      "claim_id": "CLM-046",
+      "claim_text": "Guideline excerpt from Page 5: Contents Executive summary ........................................................................................................................................",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 5,
+      "supporting_evidence_passage": "Contents\nExecutive summary ...................................................................................................................................................................................................v\nOverview ...................................................................",
+      "grounding_status": "partially_supported",
+      "evaluation_method": "semantic_heuristic",
+      "overlap_score": 0.52,
+      "details": {
+        "content_word_containment": 0.6,
+        "bigram_overlap": 0.3333,
+        "matched_content_words": [
+          "contents",
+          "executive",
+          "summary"
+        ]
+      }
+    },
+    {
+      "claim_id": "CLM-047",
+      "claim_text": "Design and run campaigns and advocacy initiatives to raise awareness of, generate \nenthusiasm for, and gain commitment to IPC programmes to reduce harm and prevent \ndeath.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 47,
+      "supporting_evidence_passage": "Design and run campaigns and advocacy initiatives to raise awareness of, generate \nenthusiasm for, and gain commitment to IPC programmes to reduce harm and prevent \ndeath. \n Facilitate and help to mobilize funding for IPC country capacity-building. \n Provide concrete goals and benchmarks and measure",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-048",
+      "claim_text": "Executive summary vii\nExecutive summary \nPatient harm due to unsafe care is a leading cause of death and disability worldwide, and most of such \nharm is avoidable (1).",
+      "source_id": "who_medication_without_harm_004",
+      "page_number": 8,
+      "supporting_evidence_passage": "Executive summary vii\nExecutive summary \nPatient harm due to unsafe care is a leading cause of death and disability worldwide, and most of such \nharm is avoidable (1). Harm due to medicines and therapeutic options accounted for nearly 50% of the \noverall preventable harm in medical care (2). The poo",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-049",
+      "claim_text": "Guideline excerpt from Page 41: As patients seek help from a health care system  for advice, investigation, diagnosis, treatment and  rehabilitation, they enter a series of care processes that...",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 41,
+      "supporting_evidence_passage": "As patients seek help from a health care system \nfor advice, investigation, diagnosis, treatment and \nrehabilitation, they enter a series of care processes that \nare often extensively interconnected. The number and \nrange of clinical processes and procedures is huge and \nvaries from the relatively s",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_lexical_containment",
+      "overlap_score": 0.8548,
+      "details": {
+        "content_word_containment": 0.875,
+        "bigram_overlap": 0.8077,
+        "matched_content_words": [
+          "advice",
+          "care",
+          "diagnosis",
+          "enter",
+          "health",
+          "help",
+          "investigation",
+          "patients"
+        ]
+      }
+    },
+    {
+      "claim_id": "CLM-050",
+      "claim_text": "No supported evidence claim can be made from the indexed collection.",
+      "source_id": "NONE",
+      "page_number": null,
+      "supporting_evidence_passage": "",
+      "grounding_status": "unsupported",
+      "evaluation_method": "unmatched_source",
+      "overlap_score": 0.0,
+      "details": {
+        "reason": "Cited source_id 'NONE' was not found in retrieved passages."
+      }
+    },
+    {
+      "claim_id": "CLM-051",
+      "claim_text": "No supported evidence claim can be made from the indexed collection.",
+      "source_id": "NONE",
+      "page_number": null,
+      "supporting_evidence_passage": "",
+      "grounding_status": "unsupported",
+      "evaluation_method": "unmatched_source",
+      "overlap_score": 0.0,
+      "details": {
+        "reason": "Cited source_id 'NONE' was not found in retrieved passages."
+      }
+    },
+    {
+      "claim_id": "CLM-052",
+      "claim_text": "Current data sources are therefore fragmented and \ndisparate and fall well short of the comprehensive, \nintegrated information system needed within patient \nsafety programmes.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 65,
+      "supporting_evidence_passage": "Current data sources are therefore fragmented and \ndisparate and fall well short of the comprehensive, \nintegrated information system needed within patient \nsafety programmes. A few health care leaders can \nconfidently describe which data their organizations \nuse to monitor and learn from patient sa",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-053",
+      "claim_text": "A few health care leaders can \nconfidently describe which data their organizations \nuse to monitor and learn from patient safety incidents.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 65,
+      "supporting_evidence_passage": "Current data sources are therefore fragmented and \ndisparate and fall well short of the comprehensive, \nintegrated information system needed within patient \nsafety programmes. A few health care leaders can \nconfidently describe which data their organizations \nuse to monitor and learn from patient sa",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-054",
+      "claim_text": "18 Medication without harm: policy brief\n Patient engagement: engage patients and providers \nto improve service delivery and governance (124).",
+      "source_id": "who_medication_without_harm_004",
+      "page_number": 27,
+      "supporting_evidence_passage": "18 Medication without harm: policy brief\n Patient engagement: engage patients and providers \nto improve service delivery and governance (124). \nThe WHO patient engagement tool, \"5 Moments for \nMedication Safety\" on questions patients should ask \non starting, taking, adding, reviewing and stopping a ",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-055",
+      "claim_text": "The WHO patient engagement tool, \"5 Moments for \nMedication Safety\" on questions patients should ask \non starting, taking, adding, reviewing and stopping a \nmedication can be used (121).",
+      "source_id": "who_medication_without_harm_004",
+      "page_number": 27,
+      "supporting_evidence_passage": "18 Medication without harm: policy brief\n Patient engagement: engage patients and providers \nto improve service delivery and governance (124). \nThe WHO patient engagement tool, \"5 Moments for \nMedication Safety\" on questions patients should ask \non starting, taking, adding, reviewing and stopping a ",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-056",
+      "claim_text": "Guideline excerpt from Page 17: 8 Medication without harm: policy brief likelihood of falls (45). In residential care facilities, the rate of falls is much higher than elsewhere, and  they pro...",
+      "source_id": "who_medication_without_harm_004",
+      "page_number": 17,
+      "supporting_evidence_passage": "8 Medication without harm: policy brief\nlikelihood of falls (45). In residential care facilities, the rate of falls is much higher than elsewhere, and \nthey progress to more serious complications (46). Use of opioids, antiepileptics and polypharmacy was \nsignificantly associated with an increased ri",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_lexical_containment",
+      "overlap_score": 0.8122,
+      "details": {
+        "content_word_containment": 0.8235,
+        "bigram_overlap": 0.7857,
+        "matched_content_words": [
+          "brief",
+          "care",
+          "elsewhere",
+          "facilities",
+          "falls",
+          "harm",
+          "higher",
+          "likelihood"
+        ]
+      }
+    },
+    {
+      "claim_id": "CLM-057",
+      "claim_text": "Actions for health care facilities and services\n Develop institutional policies for robust informed consent, for patient access to their \nmedical records, and for emergency escalation systems that can be triggered by patients \nand families.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 55,
+      "supporting_evidence_passage": "STRATEGY 4.4: \nEstablish the \nprinciple and \npractice of \nopenness and \ntransparency \nthroughout health \ncare, including \nthrough patient \nsafety incident \ndisclosure to \npatients and \nfamilies\nActions for governments \n Develop national guidance for informed consent, for patient access to their medi",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-058",
+      "claim_text": "Develop and implement disclosure policies and procedures to inform patients \nand families of patient safety incidents that caused (or could have caused) \ninadvertent harm.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 55,
+      "supporting_evidence_passage": "STRATEGY 4.4: \nEstablish the \nprinciple and \npractice of \nopenness and \ntransparency \nthroughout health \ncare, including \nthrough patient \nsafety incident \ndisclosure to \npatients and \nfamilies\nActions for governments \n Develop national guidance for informed consent, for patient access to their medi",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-059",
+      "claim_text": "Publish an annual report on patient safety performance of the health system of the \ncountry, including the frequency, nature and burden of avoidable harm in health care.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 69,
+      "supporting_evidence_passage": "STRATEGY 6.2: \nCreate a patient \nsafety information \nsystem based on \nall sources of data \nrelated to risks and \nharm inherent in the \ndelivery of health \ncare and integrated \nwith existing health \nmanagement \ninformation systems\nActions for governments \n Strengthen synergies and data-sharing channe",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-060",
+      "claim_text": "resolution requested the Director-General of WHO \n\"to formulate a global patient safety action plan in \nconsultation with Member States and all relevant \nstakeholders, including in the private sector\" .",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 16,
+      "supporting_evidence_passage": "resolution requested the Director-General of WHO \n\"to formulate a global patient safety action plan in \nconsultation with Member States and all relevant \nstakeholders, including in the private sector\" . The plan \nmust be submitted to the Seventy-fourth World Health \nAssembly in 2021 through the 148t",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-061",
+      "claim_text": "1.3 Development process\nThis global action plan was co-developed through a \nparticipative process with the contribution of leading \ninternational experts on patient safety.",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 16,
+      "supporting_evidence_passage": "resolution requested the Director-General of WHO \n\"to formulate a global patient safety action plan in \nconsultation with Member States and all relevant \nstakeholders, including in the private sector\" . The plan \nmust be submitted to the Seventy-fourth World Health \nAssembly in 2021 through the 148t",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-062",
+      "claim_text": "Drug safety: A shared responsibility.",
+      "source_id": "who_medication_without_harm_004",
+      "page_number": 43,
+      "supporting_evidence_passage": "34 Medication without harm: policy brief\nGlossary references\n1. Bates DW, Boyle DL, Vander Vliet MB, Schneider J, Leape L. Relationship between medication errors and adverse \ndrug events. J Gen Intern M\ned. 1995;10(4):199-205 doi: 10.1007/BF02600255.\n2. The importance of pharmacovigilance: safet\ny m",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-063",
+      "claim_text": "Guideline excerpt from Page 39: 30 Medication without harm: policy brief 110. Royal S, Smeaton L, Avery AJ, Hurwitz B, Sheikh A. Interventions in primary care to reduce medication related  adv...",
+      "source_id": "who_medication_without_harm_004",
+      "page_number": 39,
+      "supporting_evidence_passage": "30 Medication without harm: policy brief\n110. Royal S, Smeaton L, Avery AJ, Hurwitz B, Sheikh A. Interventions in primary care to reduce medication related \nadverse events and hospital admissions: Systematic review and meta-analy\nsis. BMJ Qual Saf. 2006;15(1):23-31. \ndoi: 10.1136/qshc.2004.012153.\n1",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_lexical_containment",
+      "overlap_score": 0.8202,
+      "details": {
+        "content_word_containment": 0.8421,
+        "bigram_overlap": 0.7692,
+        "matched_content_words": [
+          "110",
+          "avery",
+          "brief",
+          "care",
+          "harm",
+          "hurwitz",
+          "interventions",
+          "medication"
+        ]
+      }
+    },
+    {
+      "claim_id": "CLM-064",
+      "claim_text": "Investing in patient safety positively impacts health outcomes, reduces costs related to patient\nharm, improves system efficiency, and helps in reassuring communities and restoring their\ntrust in health care systems (4,5).",
+      "source_id": "who_global_patient_safety_003",
+      "page_number": 5,
+      "supporting_evidence_passage": "Investing in patient safety positively impacts health outcomes, reduces costs related to patient\nharm, improves system efficiency, and helps in reassuring communities and restoring their\ntrust in health care systems (4,5).\n\nWHO response\n\nGlobal action on patient safety\n\nRecognizing patient safety as",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-065",
+      "claim_text": "WHO response\n\nGlobal action on patient safety\n\nRecognizing patient safety as a global health priority, and as an essential component of\nstrengthening health systems for moving towards universal health coverage, the Seventy-\nsecond World Health Assembly adopted resolution WHA72.6 on \"Global action on patient\nsafety\" in May 2019.",
+      "source_id": "who_global_patient_safety_003",
+      "page_number": 5,
+      "supporting_evidence_passage": "Investing in patient safety positively impacts health outcomes, reduces costs related to patient\nharm, improves system efficiency, and helps in reassuring communities and restoring their\ntrust in health care systems (4,5).\n\nWHO response\n\nGlobal action on patient safety\n\nRecognizing patient safety as",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    },
+    {
+      "claim_id": "CLM-066",
+      "claim_text": "That is why the Seventy-second World Health Assembly \nin May 2019 adopted resolution WHA72.6 on \"Global \naction on patient safety\" to give priority to patient safety \nas an essential foundational step in building, designing, \noperating and evaluating the pe",
+      "source_id": "who_global_patient_safety_001",
+      "page_number": 11,
+      "supporting_evidence_passage": "Introduction\nO\nver the next 10 years, the World Health Organization \n(WHO), its global partners and its Member States will \nbe working tirelessly to help all people of the world to \nhave access to health services.\nUniversal health coverage is an inspiring goal whereby \nall individuals and communitie",
+      "grounding_status": "supported",
+      "evaluation_method": "deterministic_verbatim",
+      "overlap_score": 1.0,
+      "details": {
+        "match_type": "exact_verbatim_containment"
+      }
+    }
+  ]
+}

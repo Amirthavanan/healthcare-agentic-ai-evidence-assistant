@@ -79,3 +79,32 @@ def test_case_review_endpoint():
     assert data["validation"]["passed"] is True
     assert "evidence" in data
     assert len(data["evidence"]) > 0
+
+
+def test_llm_health_endpoint():
+    response = client.get("/llm/health")
+    assert response.status_code == 200
+    data = response.json()
+    assert "provider" in data
+    assert "model" in data
+    assert "available" in data
+    assert "status_code" in data
+
+
+def test_evaluation_comprehensive_endpoint():
+    response = client.get("/evaluation/comprehensive")
+    assert response.status_code == 200
+    data = response.json()
+    assert "summary" in data
+    assert "retrieval_results" in data
+    assert data["summary"]["scenarios_passed"] == 12
+
+
+def test_evaluation_scenarios_endpoint():
+    response = client.get("/evaluation/scenarios")
+    assert response.status_code == 200
+    data = response.json()
+    assert "total_scenarios" in data
+    assert "passed" in data
+    assert data["pass_rate"] == 100.0
+    assert len(data["scenarios"]) == 12

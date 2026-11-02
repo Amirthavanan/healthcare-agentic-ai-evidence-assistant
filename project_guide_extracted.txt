@@ -1,0 +1,360 @@
+
+--- PAGE 1 ---
+Healthcare Agentic AI Project Guide | Educational prototype
+Page 1
+ HEALTHCARE
+ AGENTIC AI
+ Multi-Agent Clinical Evidence and Care Coordination System
+ A production-minded project guide with healthcare-specific model recommendations, agent roles,
+architecture, sample inputs and outputs, safety controls, evaluation, and implementation roadmap.
+Recommended capstone: Clinical Evidence Retrieval and Care Coordination Assistant
+ For Agentic AI learners, AI/ML engineers, healthcare technology teams, and technical trainers.
+
+--- PAGE 2 ---
+Healthcare Agentic AI Project Guide | Educational prototype
+Page 2
+1. Project Overview
+Objective. Build a multi-agent application that accepts a clinical question or de-identified case summary, retrieves relevant
+evidence from approved references, checks evidence quality, and prepares a structured summary for a qualified healthcare
+professional to review.
+Safety boundary. This is an educational decision-support prototype, not an autonomous diagnostic, prescribing, triage, or
+treatment system. It must not make final clinical decisions or present generated content as a substitute for a clinician.
+Core use cases
+ Retrieve and summarize approved clinical guidelines and biomedical literature.
+ Summarize supplied patient-record facts while separating documented facts from missing or inferred information.
+ Attach references to material claims and flag evidence conflicts or insufficient support.
+ Route uncertain, conflicting, urgent, or out-of-scope cases to human review.
+ Log agent actions, retrieval sources, validation results, and failure reasons.
+Success criteria
+ Substantive evidence claims are traceable to retrieved sources or marked unsupported.
+ The system does not invent patient history, medication data, citations, or eligibility conclusions.
+ Missing data and uncertainty are visible in the output.
+ Tool failures and source conflicts fail safely or trigger review.
+ Evaluation is repeatable on a fixed, versioned test set.
+2. Reference Architecture
+ User / De-identified Case
+↓
+Intake & Scope Agent
+↓
+Orchestrator (LangGraph or Google ADK)
+■■■ Patient Context Agent (record facts only)
+■■■ Evidence Retrieval Agent (approved sources)
+■■■ Evidence Quality Agent (relevance, dates, conflicts)
+■■■ Safety & Policy Agent (scope, missing data, escalation)
+■■■ Summary Agent (draft with citations)
+↓
+Output Validator → Human Review Queue → Audit Log
+Workflow design
+Use sequential steps for intake, retrieval, verification and drafting; conditional routing for incomplete or conflicting cases;
+parallel search for independent approved sources; bounded retries for transient failures; and allowlisted tools. Keep write
+actions disabled by default and require human approval for any change to a clinical record.
+
+--- PAGE 3 ---
+Healthcare Agentic AI Project Guide | Educational prototype
+Page 3
+3. Agent Responsibilities
+ Agent
+Responsibilities
+Output contract
+Intake & Scope
+Classify request, identify missing fields, normalize
+question, enforce scope.
+Request type, required fields, scope status,
+clarification prompt.
+Patient Context
+Extract supplied facts, dates, documented
+allergies/medications, relevant history.
+Fact list with source locations; unknown fields remain
+unknown.
+Evidence Retrieval
+Search approved guidelines and biomedical literature
+indexes.
+Passages, document ID, version/date, section/page
+metadata.
+Evidence Quality
+Check relevance, source authority, freshness, duplicates,
+contradictions, claim support.
+Evidence table, conflicting claims, unsupported-claim
+flags.
+Safety & Policy
+Check scope, configured escalation rules, missing data,
+privacy and injection risks.
+Review flag, reason codes, safe next step.
+Summary Agent
+Compose a concise clinician-facing draft grounded in
+verified facts and evidence.
+Structured draft, citations, limitations, uncertainty.
+Output Validator
+Validate schema, citation presence, prohibited claims, and
+source consistency.
+Pass/fail, error codes, safe correction or escalation.
+Orchestrator
+Manage state, routing, budgets, timeouts, retries, and
+audit trace.
+Traceable workflow status and terminal outcome.
+4. Domain-Specific Model Recommendations
+Select models by task and evaluate them on the intended workflow. Medical-domain training does not equal clinical validation.
+Model / resource
+Best fit
+Implementation notes
+MedGemma 1.5 4B
+Medical text and image comprehension;
+medical-report structured extraction; EHR
+understanding prototypes.
+Compact relative to 27B variants, but needs suitable
+inference hardware/hosting and task-specific evaluation.
+MedGemma 27B
+More demanding medical-text reasoning and record
+summarization experiments.
+Higher compute requirements. Select text-only or
+multimodal variant based on input needs.
+BioBERT
+Biomedical entity extraction, terminology-oriented
+NLP, biomedical text classification.
+May need task-specific fine-tuning or a task head.
+PubMedBERT
+Biomedical literature search, abstract classification,
+evidence retrieval components.
+Combine with retrieval/ranking and source metadata; not
+a standalone orchestrator.
+MedSigLIP
+Medical-image embeddings, similarity, classification
+or retrieval where generated text is not the main
+task.
+Validate on the target image type and dataset.
+General instruction LLM
+Tool calls, orchestration, structured formatting and
+nonclinical workflow coordination.
+Use strict schemas, retrieval grounding, permission limits
+and clinical boundaries.
+Official resources: MedGemma overview · MedGemma 1.5 model card · official repository. Verify current model terms, access, compute needs, and
+intended-use restrictions before implementation.
+
+--- PAGE 4 ---
+Healthcare Agentic AI Project Guide | Educational prototype
+Page 4
+5. Suggested Technology Stack
+ Layer
+Recommended options
+Purpose
+Agent orchestration
+LangGraph or Google ADK
+Stateful workflow, routing, bounded agent coordination.
+LLM inference
+MedGemma where suitable; approved general LLM for
+orchestration
+Medical extraction/summarization and structured
+generation.
+Retrieval
+Biomedical embeddings evaluated for the corpus;
+FAISS or ChromaDB
+Semantic search over approved content.
+Sparse search
+BM25, Elasticsearch or OpenSearch
+Exact medical terms, abbreviations and drug names.
+Data structures
+FHIR-compatible schemas; synthetic FHIR resources
+Consistent representation of patient observations and
+records.
+API/UI
+FastAPI and Streamlit
+Typed endpoints, case submission and evidence review.
+Evaluation
+pytest, fixed test sets, retrieval metrics, expert review
+rubric
+Regression, safety, quality and reliability measurement.
+Observability
+Structured logs, trace IDs, latency/token/cost metrics
+Debugging, audit and operational monitoring.
+6. Data and Knowledge Sources
+Start with a small, versioned, legally usable collection. Use synthetic or properly de-identified cases during development.
+ Guidelines: approved documents with publisher, version, effective date and section metadata.
+ Research: permitted biomedical literature; preserve PMID/DOI and publication date.
+ Patient context: synthetic FHIR resources or de-identified records with provenance for each extracted fact.
+ Terminology: approved coding, medication and clinical terminology references where licensing permits.
+ Document registry: source ID, title, organization, version, retrieval date, review status and superseded status.
+Do not ingest arbitrary internet pages into a clinical knowledge base without source review, licensing checks, versioning,
+and a process for removing outdated guidance.
+7. Sample Input and Expected Output
+Sample request: “Prepare an evidence summary for clinician review about a patient with a documented history of asthma who
+reports worsening cough. Summarize relevant information from the supplied record and approved guidance. Do not diagnose
+or recommend medication changes.”
+Facts supplied: adult patient; asthma is listed in the provided record; worsening cough is reported; current medication list and
+vital signs were not supplied.
+Example structured output
+ { "case_status": "human_review_required", "record_facts": [ "Asthma is documented in the supplied
+record", "Worsening cough is reported" ], "missing_information": [ "Current medication list", "Vital
+signs", "Symptom duration and associated symptoms" ], "evidence_summary": [ { "claim": "Summary grounded
+in retrieved approved source", "source_id": "GUIDE-001", "section": "Section identifier" } ],
+"limitations": [ "Not a diagnosis or treatment plan", "Source version requires review" ],
+"escalation_reason": "Clinical assessment required; context incomplete" }
+GUIDE-001 is an illustrative placeholder and must be replaced by a real retrieved source. The example does not invent vital signs, infer severity, or
+recommend medication.
+
+--- PAGE 5 ---
+Healthcare Agentic AI Project Guide | Educational prototype
+Page 5
+8. Production Challenges and Remediations
+ Challenge
+Failure mode
+Mitigation
+Hallucinated claims
+Output unsupported by evidence.
+Claim-to-source verification, citation checks, abstention and clinician
+review.
+Outdated guidance
+Superseded content is retrieved.
+Versioned registry, effective-date metadata, allowlist and periodic
+review.
+Missing context
+System assumes medications, allergies or
+vital signs.
+Unknown stays unknown; required-field checks and review routing.
+Conflicting sources
+Sources disagree or apply to different
+populations.
+Show both sources and dates; route unresolved conflicts.
+Prompt injection
+Retrieved text attempts to override
+instructions.
+Treat retrieved content as untrusted data; isolate instructions and
+restrict tools.
+Privacy leakage
+Sensitive data appears in logs or external
+requests.
+Data minimization, approved hosting, access controls, encryption and
+redacted logs.
+Unsafe actions
+Agent changes records or sends
+messages without approval.
+Read-only defaults, least privilege, allowlists and human confirmation.
+Loops / cost spikes
+Repeated retries and delegation increase
+cost.
+Step limits, timeouts, retry/token budgets and early termination.
+Regression
+Model/prompt update reduces reliability.
+Pinned versions, regression tests, release gates, monitoring and
+rollback.
+9. Evaluation Plan
+ Dimension
+Example metric / test
+Retrieval quality
+Recall@K, Precision@K, MRR and NDCG on expert-labelled queries.
+Evidence grounding
+Percentage of material claims supported by cited passages; unsupported-claim rate.
+Citation quality
+Citation correctness, source existence, passage support and source-date validity.
+Safety boundary
+Rate of prohibited diagnosis/treatment outputs; correct abstention/escalation rate.
+Extraction quality
+Precision, recall and F1 for selected clinical entities and fields.
+Reliability
+Task completion, tool failure, schema-valid output, loop rate.
+Efficiency
+P50/P95 latency, tokens per case, cost per completed case.
+Robustness
+Missing fields, contradictory sources, adversarial documents, malformed inputs, tool outages.
+Automated metrics alone cannot establish clinical safety. Any workflow that could influence care requires qualified clinical
+review and a formal validation process.
+10. Minimum Test Suite
+ Test
+Input condition
+Expected behavior
+T01
+Complete synthetic case and relevant source
+Draft grounded summary with citations and limitations.
+T02
+Medication list absent
+Mark as missing; do not infer medication.
+T03
+No relevant source found
+Abstain from unsupported claims and request review.
+T04
+Two sources conflict
+Show conflict and route for review.
+T05
+Outdated source in index
+Prefer valid current source or flag freshness problem.
+T06
+Prompt injection in retrieved document
+Ignore embedded instructions; treat as source data.
+
+--- PAGE 6 ---
+Healthcare Agentic AI Project Guide | Educational prototype
+Page 6
+Test
+Input condition
+Expected behavior
+T07
+Retrieval timeout
+Bounded retry, log failure, return controlled status.
+T08
+Malformed model JSON
+Reject schema; bounded repair or escalation.
+T09
+Request for definitive diagnosis
+Enforce scope and route to qualified care.
+T10
+Request for medication change
+Do not prescribe/change; refer to clinician.
+T11
+Sensitive data present
+Apply approved handling and minimize log exposure.
+T12
+Unsupported citation
+Reject output and record validation failure.
+
+--- PAGE 7 ---
+Healthcare Agentic AI Project Guide | Educational prototype
+Page 7
+11. Implementation Roadmap
+ Phase
+Deliverable
+1. Scope & governance
+Define intended/prohibited use, sources, data handling, reviewer roles and acceptance criteria.
+2. Baseline retrieval
+Parse/version documents; build sparse+dense retrieval; evaluate retrieval independently.
+3. Single-agent baseline
+Generate structured evidence summaries with citations and abstention.
+4. Multi-agent workflow
+Add narrow agent roles, explicit state transitions, tool allowlists and bounded retries.
+5. Safety & validation
+Add schema checks, citation verification, missing-data handling, escalation and audit traces.
+6. Evaluation & UI
+Run fixed test suite; expose evidence and reviewer actions in Streamlit.
+7. Readiness review
+Threat model, privacy review, load/failure tests, monitoring and rollback plan.
+12. Suggested Project Structure
+ healthcare_agentic_ai/
+■■■ app/ # Streamlit interface
+■■■ api/ # FastAPI routes and schemas
+■■■ agents/ # intake, context, retrieval, evidence, safety, summary
+■■■ orchestration/ # workflow graph, state, routing, retry limits
+■■■ retrieval/ # parsing, chunking, sparse/dense indexes, reranking
+■■■ sources/ # registry, version metadata, approved documents
+■■■ validators/ # citations, output schema, safety policy
+■■■ evaluation/ # test cases, metrics, human review rubric
+■■■ data/synthetic/ # synthetic development cases
+■■■ tests/ # unit, integration, adversarial, regression
+■■■ observability/ # logs, traces, metrics
+■■■ README.md
+13. Submission Checklist
+ Architecture diagram and agent responsibility matrix.
+ Model selection rationale and task-specific validation results.
+ Versioned knowledge sources with traceable citations.
+ Working multi-agent workflow with bounded retries and terminal states.
+ Synthetic tests, including failures and adversarial scenarios.
+ Evaluation report for retrieval, grounding, safety boundaries, reliability, latency and cost.
+ Privacy/threat-model notes, limitations and human-review process.
+ Reproducible setup instructions and clear intended-use statement.
+Definition of done
+A reviewer can submit a synthetic case, inspect retrieved evidence and citations, distinguish documented from missing
+facts, see safety/validation outcomes, and trace the final status in logs—without the system making an autonomous clinical
+decision.
+Reference links
+ Google MedGemma overview
+ MedGemma 1.5 model card
+ Google Health MedGemma repository
+Model capabilities, terms and availability can change. Verify current model cards, licenses, compute requirements and intended-use restrictions
+before implementation.

@@ -11,9 +11,16 @@ services:
       - SPARSE_WEIGHT=0.35
       - DENSE_WEIGHT=0.65
       - LOG_LEVEL=INFO
+      - LLM_PROVIDER=${LLM_PROVIDER:-groq}
+      - GROQ_API_KEY=${GROQ_API_KEY:-}
+      - GROQ_MODEL=${GROQ_MODEL:-llama-3.3-70b-versatile}
+      - LLM_TEMPERATURE=${LLM_TEMPERATURE:-0.1}
+      - LLM_TIMEOUT_SECONDS=${LLM_TIMEOUT_SECONDS:-30}
+      - LLM_MAX_RETRIES=${LLM_MAX_RETRIES:-2}
     volumes:
       - ./data:/app/data
       - ./sources:/app/sources
+      - ./evaluation:/app/evaluation
     command: uvicorn api.main:app --host 0.0.0.0 --port 8000
 
   frontend:

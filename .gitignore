@@ -4,4 +4,5 @@ __pycache__/
 *.py[cod]
 .env
 audit.jsonl
+data/human_reviews.jsonl
 .streamlit/secrets.toml
